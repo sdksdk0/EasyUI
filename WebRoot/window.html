@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+	<!--  
+	<div id="win" class="easyui-window" title="My Window" style="width:600px;height:400px"   
+        data-options="iconCls:'icon-save',modal:true">   
+    Window Content    
+	</div>  
+
+-->
+
+	<input type="button"  value="打开窗口1"  id="open1"/>
+	<input type="button"  value="打开窗口2"  id="open2"/>
+	
+	
+	<div id="win1"></div>  
+	<div id="win2"></div>  
+
+ <script>
+ 
+ 	$("#open1").click(function(){
+ 		 $('#win1').window({    
+		    width:600,    
+		    height:400,    
+		    modal:false ,
+		    minimizable  :false,
+		    maximizable:false,
+		    title:"我的窗口"
+		});
+ 	});
+ 	
+ 	
+ 	$("#open2").click(function(){
+ 		 $('#win2').window({    
+		    width:600,    
+		    height:400,    
+		    modal:false ,
+		    minimizable  :false,
+		    maximizable:false,
+		    title:"我的窗口"
+		});
+ 	});
+	 
+ 
+ </script>
+
+ 
+
+
+
+
+</body>
+</html>

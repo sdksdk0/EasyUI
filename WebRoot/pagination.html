@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta name="content-type" content="text/html; charset=gbk">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+静态
+	<div
+		id="pagination"
+		class="easyui-pagination"
+		data-options="total:2000,pageSize:10"
+		style="background:#efefef;border:1px solid #ccc;"
+	>
+	</div>
+
+动态
+<div id="pp" style="background:#efefef;border:1px solid #ccc;"></div> 
+
+<script>
+	$("#pp").pagination({
+		"total":100,   //表示总记录数
+		"pageSize":10,  //每页显示多少条记录
+		"pageNumber":2,   //当前页号
+		"pageList":[10,20],  //
+		"buttons":[
+		{
+			iconCls:'icon-add',
+			handler:function(){alert('add')}
+		},'-',{
+			iconCls:'icon-save',
+			handler:function(){alert('save')
+			}
+		}],
+		"layout":['list','sep','first','prev','manual','next','last','links'],
+		"showPageList":false,
+
+	});
+
+	$("#pp").pagination({
+		"onSelectPage":function(pageNumber,b){
+			alert(pageNumber);
+			alert(b)
+		}
+	
+	
+	})
+
+</script>
+
+
+</body>
+</html>

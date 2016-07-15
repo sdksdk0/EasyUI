@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta name="content-type" content="text/html; charset=gbk">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+	<div 
+	id="adID" 
+	class="easyui-accordion" 
+	data-options="fit:false,border:true,multiple:false,selected:-1"
+	
+	style="width:300px;height:200px;"
+	>
+		<div title="北京" data-options="iconCls:'icon-save'"
+			style="overflow:auto;padding:10px;">
+			朝阳区
+		</div>
+		<div title="湖南" data-options="iconCls:'icon-reload'"
+			style="padding:10px;">衡阳市
+		</div>
+		<div title="北京" data-options="iconCls:'icon-save'"
+			style="overflow:auto;padding:10px;">
+			<p>朝阳区</p>
+		</div>
+		<div title="湖南" data-options="iconCls:'icon-reload'"
+			style="padding:10px;">
+			<p>衡阳市</p>
+			<p>长沙市</p>
+		</div>
+		
+	</div>
+
+
+	<script>
+		$(function(){
+		//增加一个面版
+			$("#adID").accordion("add",{
+				"title":"广东省",
+				"iconCls":"icon-add",
+				"content":"广州",
+				"selected":false
+			});
+			window.setTimeout(function(){
+				$("#adID").accordion("remove","北京");
+				$("#adID").accordion("unselect",0);
+				
+			},3000);
+	
+		
+		});
+		
+	
+	
+	</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+	
+	<form>
+		<table border="2" align="center">
+			<tr>
+				<th>姓名：</th>
+				<td><input id="nameID" type="text"/></td>
+			</tr>
+			<tr>
+				<th>入职时间：</th>
+				<td><input id="dateID" type="text"/></td>
+			</tr>
+		</table>
+	</form>
+ 
+<script type="text/javascript">
+		$("#nameID").validatebox({
+			required : true,
+			validType : ['length[1,6]','chinese']
+		});
+	</script>
+	<script type="text/javascript">
+		$.extend($.fn.validatebox.defaults.rules, {    
+		    chinese: {  
+		        validator: function(value){   
+		        	ar reg=/^[\u4e00-\u9fa5]/;
+					if(reg.test(value)){
+			            return true;    
+		        	}
+		        }, 
+		        message: '姓名必须为中文'   
+		    }    
+		});  
+	</script>
+	<script type="text/javascript">
+		$("#dateID").datebox({
+			required : true
+		});
+	</script>
+	
+
+
+
+</body>
+</html>

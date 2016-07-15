@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+
+	日期：
+	<input id="dd" type="text"></input>  
+
+
+ 
+		<script>
+		$('#dd').datebox({    
+		    required:true   
+		});
+		
+		
+		$("#dd").datebox({
+			onSelect:function(mydate){
+			
+				var year=mydate.getFullYear();
+				var month=mydate.getMonth()+1;
+				var date=mydate.getDate();
+			
+				alert(year+"年"+month+"月"+date+"日");
+			}
+		
+		});
+		
+		
+		</script>
+
+	
+
+</body>
+</html>

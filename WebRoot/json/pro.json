@@ -1,0 +1,32 @@
+﻿[
+  {    
+    "id":1,    
+    "text":"广东",
+    "state":"closed",
+    "children":[
+	{
+	   "id":11,
+	   "text":"广州"	,
+           "state":"closed",
+           "children":[
+	      {
+		 "id":111,    
+    	         "text":"天河"
+	      },	
+	      {
+		 "id":112,    
+    	         "text":"越秀"
+	      }	
+	   ]
+	},
+	{
+	   "id":12,
+	   "text":"深圳"		
+	}
+    ]
+  },    
+  {    
+    "id":2,    
+    "text":"湖南"
+  } 
+] 

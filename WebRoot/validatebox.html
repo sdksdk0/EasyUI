@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+
+	姓名:<input id="nameID"  /><br />
+	邮箱:<input id="emailID"  /><br />
+	密码:<input id="pwdID"  />
+	
+	<script>
+		$("#nameID").validatebox({
+			required:true,
+			//validType:'length[1,6]'
+			validType:['length[1,6]','chinese'],
+			delay:200,
+			tipPosition:'left'
+		
+		});
+		//自定义规则，验证是否为汉字
+		$.extend($.fn.validatebox.defaults.rules,{
+			chinese:{
+				//validator表示用户在文本框中输入的内容
+				validator:function(value){
+					var reg=/^[\u4e00-\u9fa5]/;
+					if(reg.test(value)){
+						return true;
+					}
+				},
+				//如果不符合中文规则，
+				message:'姓名必须是中文'
+			}
+		
+		
+		});
+		
+		$("#emailID").validatebox({
+			required:true,
+			validType: ['length[1,30]','email']
+		
+		});
+		
+		$("#pwdID").validatebox({
+			required:true,
+			validType: ['length[6,6]','pwdnum']
+		
+		});
+			//自定义规则，验证是否为密码
+		$.extend($.fn.validatebox.defaults.rules,{
+			pwdnum:{
+				//validator表示用户在文本框中输入的内容
+				validator:function(value){
+					var reg=/^[0-9]/;
+					if(reg.test(value)){
+						return true;
+					}
+				},
+				//如果不符合中文规则，
+				message:'密码必须为数字'
+			}
+		});
+		
+	
+	</script>
+
+</body>
+</html>

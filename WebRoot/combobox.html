@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+
+	城市
+		<select id="cc" class="easyui-combobox" name="dept" style="width:200px;">   
+		    <option value="aa">aitem1</option>   
+		    <option>bitem2</option>   
+		    <option>bitem3</option>   
+		    <option>ditem4</option>   
+		    <option>eitem5</option>   
+		</select> 
+		<br />
+		
+		
+		<input  id="cityID"  name="city"  value="1"/>
+		<script>
+			$("#cityID").combobox({
+				url:"json/city.json",
+				valueField:"id",
+				textField:"name"
+			});
+		
+		
+			$(function(){
+				$("#cityID").comcobox("setValue","长沙");
+				
+			});
+		
+		</script>
+		
+
+
+</body>
+</html>

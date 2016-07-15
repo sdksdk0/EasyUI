@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>demo1.html</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="themes/default/easyui.css" type="text/css" />
+<link rel="stylesheet" href="themes/icon.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+
+<ul id="treeID" class="easyui-tree">   
+	   <li>
+			<span>第一章</span>
+			<ul>
+				<li>
+					<span>第一节</span>
+					<ul>
+						<li>
+							<span>第一条</span>
+						</li>
+						<li>
+							<span>第二条</span>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span>第二节</span>
+				</li>
+			</ul>	   
+	   </li>
+	   <li>
+	   		<span>第二章</span>
+	   </li>
+	</ul>  
+	
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			//收起所有的选项
+			$("#treeID").tree("collapseAll");
+		});
+	</script>
+</body>
+</html>
